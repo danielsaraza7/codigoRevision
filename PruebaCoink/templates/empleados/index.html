@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>inicio</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand">Gestion de Usuarios</a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('index')}}">Registros <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="https://www.linkedin.com/in/ingdanielsaraza" tabindex="-1" aria-disabled="true">Ing Daniel Saraza</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+       <h1>Base de registros</h1>>
+
+
+       <!-- Ingresar nuevo usuario-->
+       <a class="btn btn-success" href="{{url_for('create')}}" >
+
+       ingresar usuario
+       </a>
+       
+       <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>email</th>
+                <th>Ciudad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+           {% for usuario in usuarios %}
+            
+           {% endfor %}
+            <tr>
+                <td>{{usuarios[0]}}</td>
+                <td>{{usuarios[3]}}</td>
+                <td>{{usuarios[2]}}</td>
+                <td>{{usuarios[1]}}</td>
+                <td>Editar |
+
+
+                    <a  class="btn btn-warning" href="/destroy/{{usuarios[0]}}">Editar</a> 
+                    <a  class="btn btn-danger" href="/destroy/{{usuarios[0]}}">Eliminar</a> 
+
+                </td>
+            </tr> 
+           
+        </tbody>
+    </table>
+    </div>
+    
+
+</body>
+</html>
+    
